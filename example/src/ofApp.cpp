@@ -3,10 +3,10 @@
 //--------------------------------------------------------------
 void ofApp::setup(){
 	ofBackground(0);
-	ofPoint pStart = ofPoint(100, 100);
-	ofVec2f vStart = ofVec2f(0, -500);
-	ofPoint pEnd = ofPoint(600, 400);
-	ofVec2f vEnd = ofVec2f(-500, 0);
+    pStart = ofPoint(100, 100);
+	vStart = ofVec2f(0, -500);
+	pEnd = ofPoint(600, 400);
+	vEnd = ofVec2f(-500, 0);
 	hi.setStartPoint(pStart, vStart);
 	hi.setEndPoint(pEnd, vEnd);
 	velocity = 0.0005f;
@@ -20,6 +20,14 @@ void ofApp::update(){
 
 //--------------------------------------------------------------
 void ofApp::draw(){
+    ofSetHexColor(0x00FF00);
+    ofDrawCircle(pStart, 5);
+    ofDrawCircle(pEnd, 5);
+    
+    ofSetHexColor(0xFF00FF);
+    ofDrawLine(pStart, pStart + vStart * 0.1);
+    ofDrawLine(pEnd, pEnd + vEnd * 0.1);
+    
 	ofSetHexColor(0xFF0000);
 	ofDrawCircle(hi.getPoint(time), 10);
 	ofSetColor(255);

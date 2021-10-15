@@ -4,6 +4,9 @@
 #include "ofxHermitInterpolation.h"
 
 class ofApp : public ofBaseApp{
+    ofPoint pStart, pEnd;
+    ofVec2f vStart, vEnd;
+    
 	public:
 		void setup();
 		void update();
